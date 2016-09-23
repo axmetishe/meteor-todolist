@@ -1,0 +1,9 @@
+Package: @@packagename@@
+Version: @@version@@-@@versiontag@@
+Section: misc
+Priority: optional
+Maintainer: Eugene Akhmetkhanov
+Architecture: all
+Depends:
+Description: Meteor::TODOList
+Homepage: https://github.com/axmetishe/meteor-todolist

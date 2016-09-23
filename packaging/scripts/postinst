@@ -1,0 +1,18 @@
+#!/bin/sh
+# postinst script
+
+case "$1" in
+  configure|1|2)
+    chown -R meteor:meteor /opt/meteor
+    chown -R meteor:meteor /var/log/meteor
+    [ -L /opt/meteor/logs ] || ln -s /var/log/meteor /opt/meteor/logs
+    ;;
+  abort-upgrade|abort-remove|abort-deconfigure|0)
+    ;;
+  *)
+    echo "postinst called with unknown argument \'$1\'" >&2
+    exit 1
+    ;;
+esac
+
+exit 0

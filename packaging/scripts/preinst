@@ -1,0 +1,14 @@
+#!/bin/sh
+# preinst script
+case "$1" in
+  configure|install|1)
+    if ! getent group meteor > /dev/null 2>&1 ; then
+      groupadd -r meteor
+    fi
+    if ! getent passwd meteor > /dev/null 2>&1 ; then
+      useradd -r -s /bin/false -N -M -d /opt/meteor -g meteor meteor > /dev/null 2>&1
+    fi
+    ;;
+  *)
+    ;;
+esac
