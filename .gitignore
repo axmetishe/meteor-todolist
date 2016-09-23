@@ -13,7 +13,7 @@
 atlassian-ide-plugin.xml
 
 ### App
-node_modules/
-.meteor/local/
-target/
-
+**/node_modules/
+**/.meteor/local/
+**/.gagarin/
+**/target/
