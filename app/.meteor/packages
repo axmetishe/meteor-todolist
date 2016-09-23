@@ -21,3 +21,4 @@ reactive-dict@1.1.8
 accounts-ui@1.1.9
 accounts-password@1.2.12
 practicalmeteor:mocha@2.1.1-rc.1
+anti:gagarin@=0.4.12
