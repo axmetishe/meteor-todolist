@@ -6,6 +6,9 @@ case "$1" in
     chown -R meteor:meteor /opt/meteor
     chown -R meteor:meteor /var/log/meteor
     [ -L /opt/meteor/logs ] || ln -s /var/log/meteor /opt/meteor/logs
+    cd /opt/meteor/programs/server && npm install
+    systemctl daemon-reload && systemctl enable meteor && systemctl start meteor
+    systemctl reload nginx
     ;;
   abort-upgrade|abort-remove|abort-deconfigure|0)
     ;;

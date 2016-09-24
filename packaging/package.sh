@@ -57,9 +57,10 @@ prepareStructure() {
   cleanBuildDir $1
 
   mkdir -p $1/{SPECS,RPMS,DEBIAN,dist}
-  mkdir -p $1/BUILD/{'opt/meteor','var/log/meteor'}
+  mkdir -p $1/BUILD/{'opt/meteor','var/log/meteor','lib/systemd/system'}
 
   cp -R -t $1/BUILD/opt/meteor/ ../target/bundle/*
+  cp -t $1/BUILD/lib/systemd/system/ $2/meteor.service
   cp -t $1/SPECS/ $2/specs/*
   cp -t $1/DEBIAN/ $2/scripts/*
   chmod +x $1/DEBIAN/p*

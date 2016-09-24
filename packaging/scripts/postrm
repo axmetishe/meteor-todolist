@@ -3,10 +3,9 @@
 case "$1" in
   failed-upgrade|abort-install|abort-upgrade|disappear|upgrade|1|2)
     ;;
-  remove)
-    rm -rf /opt/meteor
-    ;;
-  purge|0)
+  remove|purge|0)
+    systemctl stop meteor && systemctl disable meteor
+    rm -f /lib/systemd/system/meteor.service
     rm -rf /opt/meteor
     userdel -rf meteor
     groupdel meteor
